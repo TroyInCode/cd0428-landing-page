@@ -1,9 +1,5 @@
 # Landing Page Project
 
-## Instructions
+This Landing Page takes an otherwise static HTML web page and adds interactivity to it using JavaScript and CSS classes. The most notable interactive element is the viewport itself, which highlights different sections of the page depending on where the user has scrolled. The project also features an interactive navigation bar that scrolls the page to the section that is clicked on by the user.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+This landing page is the perfect example of how JavaScript can dynamically change the way an HTML document behaves and reacts to user interaction.
