@@ -47,7 +47,7 @@ const buildNewNavBar =  () => {
             const navSection = document.createElement('li');
             navSection.textContent = `Section ${i}`;
             navSection.style.color = "#000000";
-            navSection.classList.add('menu__link', '');
+            navSection.classList.add('menu__link');
             newNavigation.appendChild(navSection);
         }
 };
