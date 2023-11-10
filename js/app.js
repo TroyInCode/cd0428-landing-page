@@ -22,6 +22,8 @@
  * Define Global Variables
  * 
 */
+const newNavigation = document.querySelector("#navbar__list");
+const navContainer = document.querySelector(".navbar__menu");
 
 
 /**
@@ -38,7 +40,17 @@
  * 
 */
 
+
 // build the nav
+const buildNewNavBar =  () => {
+        for (let i = 1; i <= 4; i++) {
+            const navSection = document.createElement('li');
+            navSection.textContent = `Section ${i}`;
+            navSection.style.color = "#000000";
+            navSection.classList.add('menu__link', '');
+            newNavigation.appendChild(navSection);
+        }
+};
 
 
 // Add class 'active' to section when near top of viewport
@@ -54,6 +66,7 @@
 */
 
 // Build menu 
+console.log(buildNewNavBar());
 
 // Scroll to section on link click
 
