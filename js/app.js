@@ -71,6 +71,13 @@ const addNewEvents = (element) => {
 })
 };
 
+const createWindowEvent = () => {
+    Window.addEventListener('scroll', (event) => {
+        allSections.forEach((section) => {
+            const rect = section.getBoundingClientRect
+        });
+    })
+}
 
 // build the nav
 buildNewNavBar();
@@ -79,7 +86,7 @@ buildNewNavBar();
 
 
 // Add class 'active' to section when near top of viewport
-
+createWindowEvent();
 
 // Scroll to anchor ID using scrollTO event
 
