@@ -24,6 +24,7 @@
 */
 const newNavigation = document.querySelector("#navbar__list");
 const navContainer = document.querySelector(".navbar__menu");
+const allSections = document.querySelectorAll('section');
 
 
 /**
@@ -43,15 +44,27 @@ const navContainer = document.querySelector(".navbar__menu");
 
 // build the nav
 const buildNewNavBar =  () => {
-        for (let i = 1; i <= 4; i++) {
-            const navSection = document.createElement('li');
-            navSection.textContent = `Section ${i}`;
-            navSection.style.color = "#000000";
-            navSection.classList.add('menu__link');
-            newNavigation.appendChild(navSection);
-        }
+    allSections.forEach( (section) => {
+        const sectionId = section.id;
+        const dataNav = section.getAttribute('data-nav');
+        const newItem = document.createElement('li');
+        const newLink = document.createElement('a');
+    })
+        
 };
 
+//Adding Event Listeners to Each li Elements
+const addNewListeners = () => {
+    const navSections = document.querySelectorAll('.menu__link');
+
+    Array.from(navSections).forEach((item) => {
+        item.addEventListener('click', (event) => {
+            event.preventDefault();
+            const nav = event.target.dataset.nav;
+            document.getElementById(nav).scrollIntoView({behavior: "smooth"});
+        })
+    }); 
+}
 
 // Add class 'active' to section when near top of viewport
 
@@ -66,7 +79,7 @@ const buildNewNavBar =  () => {
 */
 
 // Build menu 
-console.log(buildNewNavBar());
+buildNewNavBar();
 
 // Scroll to section on link click
 
