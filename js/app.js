@@ -40,9 +40,7 @@ const allSections = document.querySelectorAll('section');
  * Begin Main Functions
  * 
 */
-
-
-// build the nav
+//Begin Building Nav Bar
 const buildNewNavBar =  () => {
     allSections.forEach( (section) => {
         const sectionId = section.id;
@@ -52,11 +50,30 @@ const buildNewNavBar =  () => {
         newLink.textContent = dataNav;
         newLink.href = `#${sectionId}`;
         newLink.classList.add('menu__link');
+        addNewEvents(newLink);
         newItem.appendChild(newLink);
         newNavigation.appendChild(newItem);
     })
         
 };
+//Adding Event Listeners to List Items
+const addNewEvents = (element) => {
+    element.addEventListener('click', (event) => {
+    event.preventDefault();
+    //Define Target
+    const newTargetId = element.getAttribute('href').substring(1);
+
+    //Find Target
+    const targetSection = document.getElementById(newTargetId);
+    
+    //Scroll to Target
+    targetSection.scrollIntoView({ behavior: "smooth" });
+})
+};
+
+
+// build the nav
+buildNewNavBar();
 
 //Adding Event Listeners to Each li Elements
 
@@ -74,7 +91,7 @@ const buildNewNavBar =  () => {
 */
 
 // Build menu 
-buildNewNavBar();
+
 
 // Scroll to section on link click
 
