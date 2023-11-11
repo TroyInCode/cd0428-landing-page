@@ -49,22 +49,17 @@ const buildNewNavBar =  () => {
         const dataNav = section.getAttribute('data-nav');
         const newItem = document.createElement('li');
         const newLink = document.createElement('a');
+        newLink.textContent = dataNav;
+        newLink.href = `#${sectionId}`;
+        newLink.classList.add('menu__link');
+        newItem.appendChild(newLink);
+        newNavigation.appendChild(newItem);
     })
         
 };
 
 //Adding Event Listeners to Each li Elements
-const addNewListeners = () => {
-    const navSections = document.querySelectorAll('.menu__link');
 
-    Array.from(navSections).forEach((item) => {
-        item.addEventListener('click', (event) => {
-            event.preventDefault();
-            const nav = event.target.dataset.nav;
-            document.getElementById(nav).scrollIntoView({behavior: "smooth"});
-        })
-    }); 
-}
 
 // Add class 'active' to section when near top of viewport
 
