@@ -25,6 +25,7 @@
 const newNavigation = document.querySelector("#navbar__list");
 const navContainer = document.querySelector(".navbar__menu");
 const allSections = document.querySelectorAll('section');
+const allLinks = document.querySelectorAll('a');
 
 
 /**
@@ -73,8 +74,18 @@ const addNewEvents = (element) => {
 
 const createWindowEvent = () => {
     Window.addEventListener('scroll', (event) => {
-        allSections.forEach((section) => {
-            const rect = section.getBoundingClientRect
+        allSections.forEach((section, index) => {
+            const position = section.getBoundingClientRect();
+            section.classList.remove('active');
+            if (position.top >= 0 && position.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+                section.classList.add('active');
+                const currentLink = allLinks[index];
+                if (currentLink === position) {
+                    currentLink.classList.add('active')
+                } else {
+                    currentLink.classList.remove('active');
+                }
+            }
         });
     })
 }
