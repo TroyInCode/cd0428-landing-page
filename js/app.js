@@ -25,7 +25,6 @@
 const newNavigation = document.querySelector("#navbar__list");
 const navContainer = document.querySelector(".navbar__menu");
 const allSections = document.querySelectorAll('section');
-const allLinks = document.querySelectorAll('a');
 
 
 /**
@@ -68,51 +67,52 @@ const addNewEvents = (element) => {
     const targetSection = document.getElementById(newTargetId);
     
     //Scroll to Target
-    targetSection.scrollIntoView({ behavior: "smooth" });
+    targetSection.scrollIntoView({ behavior: "smooth", block:"start" });
 })
 };
 
 const createWindowEvent = () => {
-    Window.addEventListener('scroll', (event) => {
+    window.addEventListener('scroll', () => {
         allSections.forEach((section, index) => {
-            const position = section.getBoundingClientRect();
-            section.classList.remove('active');
-            if (position.top >= 0 && position.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
-                section.classList.add('active');
-                const currentLink = allLinks[index];
-                if (currentLink === position) {
-                    currentLink.classList.add('active')
-                } else {
-                    currentLink.classList.remove('active');
-                }
+            const allNavLinks = document.querySelectorAll('a');
+            const sectionPosition = section.getBoundingClientRect();
+            const currentLink = allNavLinks[index];
+            section.classList.remove('your-active-class');
+            //Adds Active Class to Section in Viewport
+            if (sectionPosition.top >= 0 && sectionPosition.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+                section.classList.add('your-active-class');
+                highlightNavBar();
             }
         });
-    })
-}
+    });
+};
 
-// build the nav
+
+const highlightNavBar = () => {
+    allNavLinks.forEach((item) => {
+        if (currentLink) {
+        item.classList.add("current-active");
+        }
+    });
+};
+
+// Highlight the corresponding nav link when a section is scrolled into view
+
+
+// build the nav menu
 buildNewNavBar();
 
-//Adding Event Listeners to Each li Elements
-
-
+// Scroll to section on link click
 // Add class 'active' to section when near top of viewport
 createWindowEvent();
 
-// Scroll to anchor ID using scrollTO event
 
 
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
 
 
-// Scroll to section on link click
 
-// Set sections as active
+
+
+
 
 
