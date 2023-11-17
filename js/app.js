@@ -77,10 +77,10 @@ const highlightSections = () => {
     window.addEventListener('scroll', () => {
         allSections.forEach((section, index) => {
             const sectionPosition = section.getBoundingClientRect();
-            section.classList.remove('your-active-class');
+            section.classList.remove('active-viewport');
             //Adds Active Class to Section in Viewport
             if (sectionPosition.top >= 0 && sectionPosition.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
-                section.classList.add('your-active-class');
+                section.classList.add('active-viewport');
                 allNavLinks[index].classList.add('current-active');
             } else {
                 allNavLinks[index].classList.remove('current-active');
