@@ -27,6 +27,7 @@ const navContainer = document.querySelector(".navbar__menu");
 const allSections = document.querySelectorAll('section');
 
 
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -71,30 +72,25 @@ const addNewEvents = (element) => {
 })
 };
 
-const createWindowEvent = () => {
+const highlightSections = () => {
+    const allNavLinks = document.querySelectorAll('.menu__link');
     window.addEventListener('scroll', () => {
         allSections.forEach((section, index) => {
-            const allNavLinks = document.querySelectorAll('a');
             const sectionPosition = section.getBoundingClientRect();
-            const currentLink = allNavLinks[index];
             section.classList.remove('your-active-class');
             //Adds Active Class to Section in Viewport
             if (sectionPosition.top >= 0 && sectionPosition.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
                 section.classList.add('your-active-class');
-                highlightNavBar();
+                allNavLinks[index].classList.add('current-active');
+            } else {
+                allNavLinks[index].classList.remove('current-active');
             }
+            
         });
     });
 };
 
 
-const highlightNavBar = () => {
-    allNavLinks.forEach((item) => {
-        if (currentLink) {
-        item.classList.add("current-active");
-        }
-    });
-};
 
 // Highlight the corresponding nav link when a section is scrolled into view
 
@@ -104,7 +100,8 @@ buildNewNavBar();
 
 // Scroll to section on link click
 // Add class 'active' to section when near top of viewport
-createWindowEvent();
+highlightSections();
+
 
 
 
