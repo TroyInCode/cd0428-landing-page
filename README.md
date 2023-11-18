@@ -1,5 +1,23 @@
-# Landing Page Project
+# Project Title
+**Dynamic Landing Page**
 
-This Landing Page takes an otherwise static HTML web page and adds interactivity to it using JavaScript and CSS classes. The most notable interactive element is the viewport itself, which highlights different sections of the page depending on where the user has scrolled. The project also features an interactive navigation bar that scrolls the page to the section that is clicked on by the user.
+# Description
+The landing page project uses a combination of HTML, CSS, and JavaScript to create an interactive, dynamic webpage. This webpage demonstrates what can be done using JavaScript DOM manipulation. JavaScript is used to add event listeners to the navigation bar and the webpage itself. JavaScript is used to highlight specific sections of the page, depending on which section is visible in the viewport.
 
-This landing page is the perfect example of how JavaScript can dynamically change the way an HTML document behaves and reacts to user interaction.
+
+# Example
+
+This landing page makes frequent use of function expressions, which typically make heavy use of the **for loop** or the **forEach()** methods, like so: 
+```js
+const array = [1, 2, 3, 4];
+
+const exampleFunction = (array) => {
+    array.forEach((item) => {
+        console.log(item);
+    });
+
+exampleFunction(array);
+```
+
+# Usage
+As it stands, this landing page is meant to demonstrate what can be done with JavaScript DOM manipulation language. Therefore, it is not itended to be used for other projects.
