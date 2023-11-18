@@ -11,20 +11,19 @@
 
 /* ---- Base Rules ---- */
 body {
-    background-image: url('images/internationalfood2.jpg');
+    background-image: url('images/newfoodpic1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
     font-family: 'Merriweather', serif;
 }
 
-
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
     margin: 2em 1rem;
-    color: #fff;
+    color: #c9c6c6;
 }
 
 @media only screen and (min-width: 35em){
@@ -38,12 +37,13 @@ h2 {
     border-bottom: 1px solid #cc1;
     font-family: 'Oxygen', Sans-Serif;
     font-size: 3em;
-    color: #fff;
+    color: #c9c6c6;
 }
 
 p {
     line-height: 1.6em;
-    color: #eee;
+    color: #c9c6c6;
+    font-weight: 500;
 }
 
 /* ---- Layout Rules ---- */
@@ -90,7 +90,7 @@ section {
 }
 
 .current-active {
-    background: #d46926;
+    background: #F8201D;
 }
 
 /* Header Styles */
@@ -200,7 +200,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.active-viewport {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 section.active-viewport .landing__container::before {
